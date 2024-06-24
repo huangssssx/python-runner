@@ -1,8 +1,7 @@
 import { execFile } from 'child_process';
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(request: Request) {
     try {
         const result = await new Promise((resolve, reject) => {
             execFile('python3', ['app/pys/script.py'], (error, stdout, stderr) => {
