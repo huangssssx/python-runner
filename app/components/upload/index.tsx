@@ -13,7 +13,7 @@ export default function Upload() {
     return (
         <div>
             <h1 style={{ color: "red", fontSize: "36px" }}>python script back infos: </h1>
-            <pre>{JSON.stringify(systemInfo, null, 2)}</pre>
+            <pre style={{ color: "blue", fontSize: "24px" }}> {JSON.stringify(systemInfo, null, 2)}</pre>
         </div >
     );
 }
