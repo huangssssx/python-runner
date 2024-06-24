@@ -1,10 +1,13 @@
 import { execFile } from 'child_process';
 import { NextResponse } from 'next/server';
+import path from 'path';
 
 export async function GET(request: Request) {
     try {
+        // const scriptPath = path.join(__dirname, '/opt/pys/script.py');
+
         const result = await new Promise((resolve, reject) => {
-            execFile('python3', ['app/pys/script.py'], (error, stdout, stderr) => {
+            execFile('python3', ["/opt/pys/script.py"], (error, stdout, stderr) => {
                 if (error) {
                     console.error('Error executing script:', error);
                     reject(error);
