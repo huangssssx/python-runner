@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 export default function Upload() {
     const [systemInfo, setSystemInfo] = useState({});
     useEffect(() => {
-        axios.get('http://localhost:3000/api/run-python').then((res) => {
+        axios.get('/api/run-python').then((res) => {
             console.log(res);
             setSystemInfo(res.data.system_info || {});
         })
